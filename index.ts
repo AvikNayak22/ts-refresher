@@ -218,3 +218,23 @@ function checking(value: string | number) {
     console.log("number");
   }
 }
+
+//index signatures
+//allow you to define an object type with dynamic properties.
+interface StringArray {
+  [index: number]: string;
+}
+
+let myArray: StringArray;
+myArray = ["Mahesh", "Rajkot", "India"];
+
+let myStr: string = myArray[0];
+
+//keyof operator
+interface Person {
+  name: string;
+  age: number;
+}
+
+type PersonKeys = keyof Person;
+let m: PersonKeys = "age";
