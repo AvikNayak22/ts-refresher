@@ -284,3 +284,28 @@ export class Calculator {
     return a * b;
   }
 }
+
+//alias
+type UserId = string;
+let userId: UserId = "123";
+
+//Decorators
+//decorators are used for annotations and a meta programming syntax
+//class
+//method
+//property
+//parameter
+//accessor
+
+function simpleClassDecorator(constructor: Function) {
+  console.log("class decorator called");
+}
+
+@simpleClassDecorator
+class MyClass {
+  constructor() {
+    console.log("MyClass called");
+  }
+}
+
+const myClassInstance = new MyClass();
