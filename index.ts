@@ -238,3 +238,49 @@ interface Person {
 
 type PersonKeys = keyof Person;
 let m: PersonKeys = "age";
+
+//utility types
+interface Animal {
+  name?: string;
+  sound?: string;
+}
+
+// type PartialAnimal = Partial<Animal>
+// type RequiredAnimal = Required<Animal>
+type ReadonlyAnimal = Readonly<Animal>;
+type Records = Record<string, number>;
+
+const dog: ReadonlyAnimal = {};
+
+const record: Records = {
+  name: 2,
+};
+
+type nameOnly = Pick<Animal, "name">;
+
+let cat: nameOnly = {
+  name: "cat",
+};
+
+type omitOnly = Omit<Animal, "name">;
+
+let rabbit: omitOnly = {
+  sound: "sound",
+};
+
+//modules
+export function add3(a: number, b: number): number {
+  return a + b;
+}
+
+export const PI: number = 3.14;
+
+export class Calculator {
+  add(a: number, b: number): number {
+    return a + b;
+  }
+
+  multiply(a: number, b: number): number {
+    return a * b;
+  }
+}
